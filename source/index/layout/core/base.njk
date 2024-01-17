@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="uk" dir="ltr" {% block ogHtmlAttr %}{% endblock %}>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700&display=swap" rel="stylesheet">
+
+  {%- block browserTheme %}
+    {%- include src + 'layout/core/blocks/browser_theme.njk' %}
+  {%- endblock %}
+
+  {%- block ogTags %}{% endblock %}
+
+  {%- block metatags %}
+    {%- include src + 'layout/core/blocks/metatags.njk' %}
+  {%- endblock %}
+
+  {%- block metaRobots %}{% endblock %}
+
+  {%- include src + 'layout/core/blocks/favicons.njk' %}
+
+  {%- block fonts %}{% endblock %}
+
+  {%- block stylesheets -%}
+    <link rel="stylesheet" href="{{ path }}css/app{{ minSuffix }}.css">
+  {% endblock %}
+
+  {%- block headJavascripts %}{% endblock -%}
+</head>
+
+<body>
+  {%- block body %}
+    <div class="wrapper">
+      {%- block header %}
+      {%- endblock %}
+
+      {%- block nav %}{% endblock %}
+      {%- block breadcrumb %}{% endblock %}
+      {%- block flashMessages %}{% endblock %}
+
+      {%- block main %}
+        <div class="main">
+          {% block mainBody %}{% endblock %}
+        </div>
+      {% endblock %}
+
+      {%- block footer %}
+      {%- endblock -%}
+    </div>
+  {% endblock %}
+
+  {%- block noscripts %}{% endblock %}
+
+  {%- block javascripts %}
+    <script src="{{ path }}js/vendors~main.app{{ minSuffix }}.js" defer></script>
+    <script src="{{ path }}js/app{{ minSuffix }}.js" defer></script>
+  {%- endblock %}
+</body>
+
+</html>

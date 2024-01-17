@@ -1,0 +1,21 @@
+{# Page settings #}
+{% set src = 'index/' %}
+{% set path = '/' %}
+{# End page settings #}
+
+{% extends src + 'layout/core/base.njk' %}
+
+{% set pageTitle = 'Модельная онлайн-школа' %}
+
+{%- block mainBody -%}
+        {% include src + 'layout/blocks/header/header.njk' %}
+        {% include src + 'layout/blocks/main/blocks/about/about.njk' -%}
+        {% include src + 'layout/blocks/main/blocks/who/who.njk' -%}
+        {% include src + 'layout/blocks/main/blocks/program/program.njk' -%}
+        {% include src + 'layout/blocks/main/blocks/result/result.njk' -%}
+        {% include src + 'layout/blocks/main/blocks/connect/connect.njk' -%}
+        {% include src + 'layout/blocks/main/blocks/price/price.njk' -%}
+        {% include src + 'layout/blocks/main/blocks/reviews/reviews.njk' -%}
+        {% include src + 'layout/blocks/main/blocks/question/question.njk' -%}
+        {% include src + 'layout/blocks/footer/footer.njk' %}
+{%- endblock -%}

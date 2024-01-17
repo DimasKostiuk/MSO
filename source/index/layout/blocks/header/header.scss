@@ -1,0 +1,285 @@
+.header {
+
+  &__bg {
+    background: url(../../../images/bg.png) right / cover no-repeat;
+    // width: 100%;
+    height: 100%;
+
+    @include md {
+      object-fit: cover;
+      background-position: 100% 120%;
+      background-size: 150%;
+      background-color: #eafaff;
+    }
+    @include sm {
+      background-size: 200%;
+    }
+  }
+
+  &__row {
+    height: 700px;
+    justify-content: center;
+    position: relative;
+    @include md{
+      height: 800px;
+    }
+    
+  }
+
+  &__logo {
+    @extend .col-auto;
+  }
+
+  &__items {
+    display: flex;
+    justify-content: center;
+    padding-top: 30px;
+
+    @include sm {
+      font-size: 14px;
+    }
+    & li {
+      margin-right: 40px;
+      @include sm {
+        margin-right: 20px;
+      }
+
+      & a {
+        color: black;
+      }
+    }
+
+    & li:last-child {
+      margin-left: 400px;
+      @include md {
+        margin-left: 10%;
+      }
+    }
+  }
+
+  &__wrapper {
+    margin-left: 10%;
+    @include md {
+      margin-bottom: 30%;
+      margin: 0;
+      text-align: center;
+    }
+  }
+
+  &__elina {
+    font-size: 25px;
+    color: $gold;
+    letter-spacing: .3px;
+  }
+
+  &__title {
+    margin-bottom: 20px;
+    font-family: 'Lato', Arial sans-serif;
+    font-size: 60px;
+    font-weight: 100;
+    line-height: 1;
+    @include sm {
+      font-size: 50px;
+    }
+  }
+
+  &__start {
+    font-size: 18px;
+    color: #000000;
+    letter-spacing: 1px;
+    margin-bottom: 30px;
+    font-weight: 700;
+  }
+
+  &__text {
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 30px;
+  }
+
+  &__video-wrapper {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
+
+  &__video {
+    display: flex;
+    justify-content: space-between;
+    &_bg {
+      & img {
+        @include md {
+          height: 100px;
+        }
+      }
+    }
+    &_photo {
+      background-color: $gold;
+      width: 620px;
+      height: 160px;
+      display: flex;
+      align-items: center;
+      @include md {
+        height: 100px;
+      }
+      @include sm {
+        width: 80%;
+      }
+    }
+
+    &_text {
+      width: 200px;
+      margin-left: 30px;
+      color: white;
+      @include sm {
+        display: none;
+      }
+    }
+
+    &_links {
+      margin-left: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      a {
+        margin: 30px 20px 0 0;
+        @include md {
+          margin-block-start: 10px;
+        }
+      }
+    }
+  }
+
+  &__video-button {
+    border: none;
+    background-color: transparent;
+    @include sm {
+      margin-left: 40%;
+    }
+  }
+
+  &__button {
+    width: 320px;
+    &:hover {
+      border: 1px solid $gold;
+      color: $gold;
+      @include md {
+        border: none;
+      }
+    }
+    button {
+      position: relative;
+      overflow: hidden;
+    }
+    @include md {
+      position: absolute;
+      top: 55%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+  }
+
+  &__line {
+    width: 110px;
+    height: 60px;
+    background-color: rgb(255, 255, 255);
+    clip-path: polygon(65% 0, 100% 0, 35% 100%, 0 100%);
+    animation: line 2s linear infinite;
+    position: absolute;
+    top: 0;
+  }
+  &__video-background {
+    background-color: rgba(0, 0, 0, 0.616);
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 1200px;
+    width: 100%;
+    z-index: 25;
+    display: none;
+    &.active {
+      display: block;
+      animation: backgroundVIdeo 0.5s linear;
+    }
+  }
+
+  &__modal-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 1200px;
+    width: 100%;
+    display: none;
+    &.active {
+      display: block;
+      animation: videoAnim 0.5s linear;
+    }
+  }
+
+  &__modal-video {
+    position: relative;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    height: 500px;
+    width: 80%;
+    @include md {
+      height: 300px;
+    }
+    
+    & video {
+      width: 100%;
+      align-items: center;
+    }
+  }
+
+  &__button-close {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 100px;
+    right: 50px;
+    border: none;
+    background-color: transparent;
+
+    & img {
+      color: white;
+      width: 40px;
+      height: 40px;
+    }
+  }
+
+}
+
+@keyframes line {
+  0% {
+    transform: translateX(-200px);
+  }
+
+  100% {
+    transform: translateX(1500px);
+  }
+}
+
+@keyframes videoAnim {
+  0%{
+    opacity: 0;
+    transform: translateY(100px) scale(80%); 
+  }
+
+  100% {
+    transform: translateY(0) scale(100%);
+    opacity: 1;
+  }
+}
+
+@keyframes backgroundVIdeo {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

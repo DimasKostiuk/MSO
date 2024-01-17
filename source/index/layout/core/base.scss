@@ -1,0 +1,32 @@
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-family: 'Lato', sans-serif;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.button-base {
+  width: 320px;
+  height: 60px;
+  border: none;
+  background-color: #c2ac95;
+  color: white;
+  font-weight: 700;
+  &:hover {
+    background-color: white;
+  }
+}

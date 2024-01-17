@@ -1,0 +1,71 @@
+.politics {
+   font-family: 'Lato',Arial,sans-serif;
+   font-weight: 400;
+   font-size: 20px;
+   opacity: 0.8;
+   line-height: 1.55;
+   @include md {
+      font-size: 16px;
+   }
+
+   &__title {
+      font-size: 32px;
+      font-weight: bold;
+      margin-top: 100px;
+      margin-bottom: 20px;
+      text-align: center;
+      @include sm {
+         font-size: 24px;
+      }
+   }
+
+   &__modeling {
+      text-align: center;
+      font-size: 14px;
+      margin-bottom: 100px;
+   }
+
+   &__wrapper {
+      max-width: 600px;
+      position: relative;
+      left: 50%;
+      transform: translate(-50%);
+      @include md {
+         padding-inline: 30px;
+      }
+   }
+
+   &__items {
+    margin-top: 20px;
+
+    & li {
+      margin-top: 20px;
+      & span {
+         font-weight: bold;
+      }
+    }
+   }
+
+   &__list {
+      & li {
+         list-style: disc;
+      }
+      & p {
+         margin-block: 20px;
+      }
+   }
+
+   &__subtitle {
+      font-weight: bold;
+      margin-block: 30px;
+   }
+
+   &__italic {
+      font-style: italic;
+   }
+}
+
+ul {
+   padding: 0;
+}
+

@@ -1,0 +1,23 @@
+.question {
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-image: url('../../../../images/mask.png');
+        background-size: 100%;
+        object-fit: contain;
+        padding-block: 50px;
+        @include lg {
+            background-size: 200%;
+        }
+    }
+    &__title {
+        font-size: 70px;
+        font-family: 'Lato', Arial  sans-serif;
+        @include md {
+            font-size: 55px;
+            text-align: center;
+        }
+    }
+}

@@ -1,0 +1,12 @@
+{# Page settings #}
+{% set src = 'index/' %}
+{% set path = '/' %}
+{# End page settings #}
+
+{% extends src + 'layout/core/base.njk' %}
+
+{% set pageTitle = 'oferta' %}
+
+{%- block mainBody -%}
+        {% include src + 'layout/blocks/policy/oferta/oferta.njk' %}
+{%- endblock -%}

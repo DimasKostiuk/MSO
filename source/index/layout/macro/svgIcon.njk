@@ -1,0 +1,8 @@
+{% macro svgIcon(id, class) %}
+  <svg class="{{ class }}">
+    <use
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+      xlink:href="/images/svg-symbols.svg#{{ id }}"
+    ></use>
+  </svg>
+{% endmacro %}

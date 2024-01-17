@@ -1,0 +1,55 @@
+.footer {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  background-color: #dbd3ca;
+  
+  &__row {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include md {
+      flex-direction: column;
+    }
+  }
+
+  &__politic {
+    position: relative;
+    text-align: center;
+    opacity: 0.7;
+    left: 3%;
+    @include md {
+      left: 0;
+    }
+    
+    & p {
+      word-wrap: break-word;
+      left: 0;
+    }
+  }
+
+  &__confidential,
+  &__oferta {
+    & a {
+      color: #000000;
+    }
+  }
+
+  &__social {
+    position: relative;
+    left: 30%;
+    @include xlg {
+      left: 20%;
+    }
+    @include lg {
+      left: 15%;
+    }
+    @include md {
+      left: 0;
+    }
+
+    & a {
+      padding-inline: 10px;
+    }
+  }
+}

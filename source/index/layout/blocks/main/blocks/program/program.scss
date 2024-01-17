@@ -1,0 +1,140 @@
+.program {
+    &__row {
+        padding-top: 100px;
+    }
+    &__text-wrapper {
+        display: flex;
+        justify-content: center;
+        @include sm {
+            flex-direction: column;
+        }
+    }
+    &__text {
+       width: 530px;
+       margin: 0 5%;
+       word-spacing: 3px;
+       @include lg {
+        width: 30%;
+       }
+       @include sm {
+        width: 100%;
+        padding-right: 80px;
+       }
+      span {
+        font-weight: 700;
+      }
+    }
+    &__title {
+        font-size: 60px;
+        font-family: 'Lato', Arial  sans-serif;
+        @include lg {
+            font-size: 40px;
+        }
+        @include sm {
+            padding-left: 15px;
+        }
+    }
+    &__content {
+        display: flex;
+        justify-content: center;
+        margin: 80px 0;
+        @include lg {
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+    &__items-1 {
+        margin: 0 20px;
+    }
+    &__items-2 {
+        margin: 0 20px;
+    }
+    &__item {
+        width: 560px;
+        @include sm {
+            width: 100%;
+        }
+        &:hover {
+            cursor: pointer;
+            span{
+                background-color: rgba(95, 94, 94, 0.123);      
+            }
+        }
+        &:last-child {
+            border-bottom: 1px solid rgba(170, 170, 170, 0.473);
+        }
+    }
+    
+    &__item-title {
+        display: flex;
+        border-top: 1px solid rgba(170, 170, 170, 0.473);
+        font-weight: 700;
+        align-items: center;
+        @include sm {
+            // width: 150%;
+            justify-content: center;
+        }
+        p {
+            margin: 0;
+            padding: 30px 0;
+            width: 90%;
+            @include sm {
+                align-items: center;
+                justify-content: center;
+            }
+        }
+        span {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            position: relative;
+            transition: .3s;
+            padding: 20px;
+            font-weight: 700;
+            
+            img {
+                position: absolute;
+                top: 20%;
+                left: 20%;
+            }
+        }
+    }
+    &__list {
+        li {
+            list-style: disc;
+            width: 90%;
+            font-weight: 300;
+            margin: 30px 0;
+            &:first-child{
+                margin: 0;
+            }
+        }      
+    }
+
+}
+
+.hidden {
+    display: none;
+}
+.show {
+    animation-name: slide;
+    animation-duration: 1s;
+}
+.opened {
+    transform: rotate(45deg);
+}
+
+@keyframes slide {
+    0% {
+        opacity: 0;
+    }
+    30%{
+        opacity: 1;
+        height: auto;
+    }
+
+    100%{
+        height: max-content;
+        display: block;
+    }
+}
