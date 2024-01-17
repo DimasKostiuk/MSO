@@ -1,5 +1,3 @@
-# Frontend Starter Kit
-
 ## Create project
 
 ```bash
